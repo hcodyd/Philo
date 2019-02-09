@@ -1,7 +1,7 @@
 {
   "name": "node_app",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Summary Determining the relatedness of species is fundamental to understanding biology. Unfortunately, software packages for representing this relatedness in phylogenies do not have the features that an evolutionary biologist needs to easily visualize species relationships. Outdated visualization techniques with limited support for current phylogenetic formats limits the usefulness of current phylogenetic tree viewing software and makes creating a publication-ready tree difficult and time-consuming. Using a web-based programming language such as JavaScript, phylogenetic tree viewing software should have the following features:",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,15 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
+    "newick": "^2.0.0",
     "path": "^0.12.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hcodyd/Philo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hcodyd/Philo/issues"
+  },
+  "homepage": "https://github.com/hcodyd/Philo#readme"
 }

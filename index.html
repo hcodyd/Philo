@@ -7,12 +7,22 @@
 	<link href="interactive_tree.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?1.27.2"></script>
     <script type="text/javascript" src="http://mbostock.github.com/d3/d3.layout.js?1.27.2"></script>
+    <script>
+    function getInput(id){
+      return document.getElementById(id).value;
+    }
+    function parseNewick(a){for(var e=[],r={},s=a.split(/\s*(;|\(|\)|,|:)\s*/),t=0;t<s.length;t++){var n=s[t];switch(n){case"(":var c={};r.children=[c],e.push(r),r=c;break;case",":var c={};e[e.length-1].children.push(c),r=c;break;case")":r=e.pop();break;case":":break;default:var h=s[t-1];")"==h||"("==h||","==h?r.name=n:":"==h&&(r.length=parseFloat(n))}}return r}
+
+    function updateTree() {
+      update(root = parseNewick(getInput('inputTree')));
+    }
+    </script>
  
   </head>
   <body class="pageroot">
     <div class="topheader" >Philogenetic Tree Builder</div>
-    <input type="text" style="width: 500px;">
-    <input type="button" value="Click me to input tree">
+    <input type="text" style="width: 500px;" id='inputTree'>
+    <input type="button" value="Click me to input tree" onclick="updateTree()">
     <div id="chart"></div>
     <div>This is a collapsible phylogenetic tree. click on the nodes to collapse the node and do cool stuff</div>
     <script type="text/javascript">
@@ -169,9 +179,6 @@ function click(d) {
 }
 
 d3.select(self.frameElement).style("height", "410px");
-
-
-
     </script>
   </body>
 </html>
