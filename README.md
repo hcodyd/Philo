@@ -29,3 +29,4 @@ Determining the relatedness of species is fundamental to understanding biology. 
 23. Option for a watermark
 
 ## Currently working on
+Adding the ability to paste in data
